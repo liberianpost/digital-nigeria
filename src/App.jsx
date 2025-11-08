@@ -106,18 +106,16 @@ function App() {
         <div className="relative z-10 container mx-auto px-6 py-20">
           {/* Header */}
           <div className="text-center mb-16 animate-fade-in-up">
-            <div className="inline-flex items-center justify-center w-32 h-32 bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl mb-8 shadow-2xl">
-              {/* Company Logo with Heartbeat Animation */}
-              <div 
-                className="w-24 h-24 flex items-center justify-center transition-transform duration-300"
-                style={{ transform: `scale(${logoScale})` }}
-              >
-                <img 
-                  src="/Digital Nigeria 5.png" 
-                  alt="Digital Nigeria Logo" 
-                  className="w-full h-full object-contain"
-                />
-              </div>
+            {/* Company Logo Container with Heartbeat Animation - Covering Entire Space */}
+            <div 
+              className="inline-flex items-center justify-center w-32 h-32 bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl mb-8 shadow-2xl overflow-hidden transition-transform duration-300"
+              style={{ transform: `scale(${logoScale})` }}
+            >
+              <img 
+                src="/Digital Nigeria 5.png" 
+                alt="Digital Nigeria Logo" 
+                className="w-full h-full object-cover p-1"
+              />
             </div>
             <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-green-600 via-blue-600 to-purple-600 bg-clip-text text-transparent">
               Digital Nigeria
