@@ -2,67 +2,36 @@
   text-align: center;
 }
 
-.app-header {
-  background: linear-gradient(135deg, #008751 0%, #FFFFFF 50%, #008751 100%);
-  padding: 2rem;
-  color: #008751;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+/* Custom animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
-.app-header h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+.floating {
+  animation: float 3s ease-in-out infinite;
 }
 
-.app-header p {
-  font-size: 1.5rem;
-  margin-bottom: 3rem;
-  color: #333;
+/* Enhanced glass effects */
+.glass-card {
+  backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
 }
 
-.features {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-  justify-content: center;
-  max-width: 1200px;
-}
-
-.feature-card {
-  background: white;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  width: 300px;
-  border-left: 4px solid #008751;
-}
-
-.feature-card h3 {
-  color: #008751;
-  margin-bottom: 1rem;
-}
-
-.feature-card p {
-  color: #666;
-  line-height: 1.6;
-}
-
+/* Responsive design enhancements */
 @media (max-width: 768px) {
-  .features {
-    flex-direction: column;
-    align-items: center;
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
   
-  .app-header h1 {
-    font-size: 2rem;
-  }
-  
-  .app-header p {
-    font-size: 1.2rem;
+  .super-app-section {
+    padding: 1.5rem;
   }
 }
