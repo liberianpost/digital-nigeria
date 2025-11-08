@@ -3,6 +3,7 @@ import './App.css'
 
 function App() {
   const [activeService, setActiveService] = useState(0);
+  const [logoScale, setLogoScale] = useState(1);
 
   // Rotate through services for heartbeat effect
   useEffect(() => {
@@ -10,6 +11,16 @@ function App() {
       setActiveService(prev => (prev + 1) % 4);
     }, 2000); // Change every 2 seconds
     return () => clearInterval(interval);
+  }, []);
+
+  // Heartbeat animation for logo
+  useEffect(() => {
+    const heartbeatInterval = setInterval(() => {
+      setLogoScale(1.1);
+      setTimeout(() => setLogoScale(1), 200);
+    }, 1000);
+    
+    return () => clearInterval(heartbeatInterval);
   }, []);
 
   const services = [
@@ -96,7 +107,17 @@ function App() {
           {/* Header */}
           <div className="text-center mb-16 animate-fade-in-up">
             <div className="inline-flex items-center justify-center w-32 h-32 bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl mb-8 shadow-2xl">
-              <h1 className="text-6xl">🇳🇬</h1>
+              {/* Company Logo with Heartbeat Animation */}
+              <div 
+                className="w-24 h-24 flex items-center justify-center transition-transform duration-300"
+                style={{ transform: `scale(${logoScale})` }}
+              >
+                <img 
+                  src="src/Digital Nigeria 5.png" 
+                  alt="Digital Nigeria Logo" 
+                  className="w-full h-full object-contain"
+                />
+              </div>
             </div>
             <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-green-600 via-blue-600 to-purple-600 bg-clip-text text-transparent">
               Digital Nigeria
