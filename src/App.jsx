@@ -113,7 +113,7 @@ function App() {
                 style={{ transform: `scale(${logoScale})` }}
               >
                 <img 
-                  src="src/Digital Nigeria 5.png" 
+                  src="/Digital Nigeria 5.png" 
                   alt="Digital Nigeria Logo" 
                   className="w-full h-full object-contain"
                 />
